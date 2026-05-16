@@ -8,7 +8,7 @@ export default function S01_Landing({ goNext }) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
           </div>
-          <span className="text-sm font-bold text-gray-900 tracking-tight">TaxClarity</span>
+          <span className="text-sm font-bold text-gray-900 tracking-tight">Shivansh's tax calculator app</span>
         </div>
         <div className="text-xs font-medium text-gray-500 bg-gray-100 rounded-full px-3 py-1">FY 2025-26</div>
       </header>

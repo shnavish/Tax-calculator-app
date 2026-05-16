@@ -13,8 +13,7 @@ export default function StepWrapper({ children, goBack, reset, showProgress, pro
               </svg>
             </div>
             <div>
-              <div className="text-sm font-bold text-gray-900 tracking-tight leading-none">TaxClarity</div>
-              <div className="text-[10px] text-gray-400 leading-none mt-0.5 hidden sm:block">India Tax Calculator</div>
+              <div className="text-sm font-bold text-gray-900 tracking-tight leading-none">Shivansh's tax calculator app</div>
             </div>
           </button>
 
