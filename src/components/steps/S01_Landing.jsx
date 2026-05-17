@@ -48,12 +48,6 @@ export default function S01_Landing({ goNext }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
-              <button onClick={goNext} className="text-slate-500 hover:text-white font-semibold py-3.5 px-7 rounded-2xl text-sm transition-colors flex items-center gap-2">
-                <svg className="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                </svg>
-                See how it works
-              </button>
             </div>
             
             <p className="mt-4 text-xs text-slate-500">Built for salaried individuals only · FY 2025-26</p>
