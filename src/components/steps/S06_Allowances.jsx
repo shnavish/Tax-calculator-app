@@ -20,29 +20,29 @@ export default function S06_Allowances(props) {
     <StepWrapper {...props} stepName="Allowances">
       <div className="mb-4 flex items-center gap-2">
         <div className="w-6 h-6 rounded-lg bg-indigo-100 flex items-center justify-center text-sm">💼</div>
-        <div className="text-xs font-medium text-indigo-600 uppercase tracking-wide">Allowances</div>
+        <div className="text-xs font-medium text-indigo-400 uppercase tracking-wide">Allowances</div>
       </div>
       
-      <h2 className="text-xl font-bold text-gray-900 leading-tight mb-6">
+      <h2 className="text-xl font-bold text-white leading-tight mb-6">
         Any other common deductions?
       </h2>
 
       <div className="space-y-6 mb-8">
         
         {/* Professional Tax */}
-        <div className={`p-4 rounded-xl border-2 transition-all ${data.hasProfTax ? 'border-indigo-600 bg-indigo-50' : 'border-gray-200 bg-white hover:border-gray-300'}`}>
+        <div className={`p-4 rounded-xl border-2 transition-all ${data.hasProfTax ? 'border-indigo-600 bg-indigo-900/30' : 'border-slate-700 bg-slate-900 hover:border-gray-300'}`}>
           <label className="flex items-start gap-3 cursor-pointer">
             <div className="flex items-center h-5 mt-0.5">
               <input
                 type="checkbox"
                 checked={data.hasProfTax}
                 onChange={e => update({ hasProfTax: e.target.checked, professionalTax: e.target.checked ? data.professionalTax : '' })}
-                className="w-5 h-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                className="w-5 h-5 rounded border-slate-600 text-indigo-400 focus:ring-indigo-500"
               />
             </div>
             <div>
-              <div className="text-sm font-bold text-gray-900">Professional Tax (PT)</div>
-              <div className="text-xs text-gray-500 mt-0.5">Deducted directly from salary (Max ₹2,500/yr)</div>
+              <div className="text-sm font-bold text-white">Professional Tax (PT)</div>
+              <div className="text-xs text-slate-500 mt-0.5">Deducted directly from salary (Max ₹2,500/yr)</div>
             </div>
           </label>
           
@@ -59,20 +59,20 @@ export default function S06_Allowances(props) {
         </div>
 
         {/* Employer NPS */}
-        <div className={`p-4 rounded-xl border-2 transition-all ${data.hasEmployerNPS ? 'border-indigo-600 bg-indigo-50' : 'border-gray-200 bg-white hover:border-gray-300'}`}>
+        <div className={`p-4 rounded-xl border-2 transition-all ${data.hasEmployerNPS ? 'border-indigo-600 bg-indigo-900/30' : 'border-slate-700 bg-slate-900 hover:border-gray-300'}`}>
           <label className="flex items-start gap-3 cursor-pointer">
             <div className="flex items-center h-5 mt-0.5">
               <input
                 type="checkbox"
                 checked={data.hasEmployerNPS}
                 onChange={e => update({ hasEmployerNPS: e.target.checked, employerNPS: e.target.checked ? data.employerNPS : '' })}
-                className="w-5 h-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                className="w-5 h-5 rounded border-slate-600 text-indigo-400 focus:ring-indigo-500"
               />
             </div>
             <div>
-              <div className="text-sm font-bold text-gray-900">Employer NPS Contribution</div>
-              <div className="text-[10px] font-bold text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded uppercase tracking-wide inline-block mb-1 ml-2">Section 80CCD(2)</div>
-              <div className="text-xs text-gray-500 mt-0.5">When your company contributes to your NPS</div>
+              <div className="text-sm font-bold text-white">Employer NPS Contribution</div>
+              <div className="text-[10px] font-bold text-indigo-400 bg-indigo-100 px-2 py-0.5 rounded uppercase tracking-wide inline-block mb-1 ml-2">Section 80CCD(2)</div>
+              <div className="text-xs text-slate-500 mt-0.5">When your company contributes to your NPS</div>
             </div>
           </label>
           
@@ -84,7 +84,7 @@ export default function S06_Allowances(props) {
                 value={data.employerNPS}
                 onChange={val => update({ employerNPS: val })}
               />
-              <div className="mt-2 bg-white/60 p-2 rounded text-[11px] text-gray-600">
+              <div className="mt-2 bg-slate-800/60 p-2 rounded text-[11px] text-slate-500">
                 Note: Engine limits this automatically to 14% of Basic Salary.
               </div>
             </div>

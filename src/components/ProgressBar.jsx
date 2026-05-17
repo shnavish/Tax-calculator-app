@@ -2,9 +2,9 @@ export default function ProgressBar({ current, total, stepName }) {
   return (
     <div className="flex items-center gap-3 w-full">
       <div className="flex items-center gap-2 shrink-0">
-        <span className="text-xs font-semibold text-gray-700">Step {current} of {total}</span>
+        <span className="text-xs font-semibold text-slate-300">Step {current} of {total}</span>
         <span className="text-gray-300 hidden sm:inline">|</span>
-        <span className="text-xs text-gray-500 truncate max-w-[160px] hidden sm:inline">{stepName}</span>
+        <span className="text-xs text-slate-500 truncate max-w-[160px] hidden sm:inline">{stepName}</span>
       </div>
       <div className="flex items-center gap-1.5 flex-1 justify-end">
         {Array.from({ length: total }).map((_, i) => {

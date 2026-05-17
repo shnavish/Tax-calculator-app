@@ -32,10 +32,10 @@ export default function S05_Exemptions(props) {
     <StepWrapper {...props} stepName="HRA & Rent">
       <div className="mb-4 flex items-center gap-2">
         <div className="w-6 h-6 rounded-lg bg-indigo-100 flex items-center justify-center text-sm">🏠</div>
-        <div className="text-xs font-medium text-indigo-600 uppercase tracking-wide">Exemptions</div>
+        <div className="text-xs font-medium text-indigo-400 uppercase tracking-wide">Exemptions</div>
       </div>
       
-      <h2 className="text-xl font-bold text-gray-900 leading-tight mb-6">
+      <h2 className="text-xl font-bold text-white leading-tight mb-6">
         Do you live in a rented house?
       </h2>
 
@@ -44,13 +44,13 @@ export default function S05_Exemptions(props) {
           <div className="flex gap-3 mb-3">
             <button
               onClick={() => { update({ paysRent: true }); setErrors(e => ({...e, paysRent: null})) }}
-              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.paysRent === true ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.paysRent === true ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
             >
               Yes
             </button>
             <button
               onClick={() => { update({ paysRent: false, monthlyRent: '', cityType: null }); setErrors(e => ({...e, paysRent: null, monthlyRent: null, cityType: null})) }}
-              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.paysRent === false ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.paysRent === false ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
             >
               No
             </button>
@@ -58,7 +58,7 @@ export default function S05_Exemptions(props) {
           {errors.paysRent && <p className="text-sm text-red-600">Please select Yes or No.</p>}
 
           {data.paysRent && (
-            <div className="bg-indigo-50/50 border border-indigo-100 rounded-xl p-4 reveal space-y-5 mt-4">
+            <div className="bg-indigo-50/50 border border-indigo-800 rounded-xl p-4 reveal space-y-5 mt-4">
               <div>
                 <NumberInput
                   id="rent"
@@ -72,17 +72,17 @@ export default function S05_Exemptions(props) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">City type <span className="text-red-500">*</span></label>
+                <label className="block text-sm font-medium text-slate-300 mb-2">City type <span className="text-red-500">*</span></label>
                 <div className="flex gap-2">
                   <button
                     onClick={() => { update({ cityType: 'metro' }); setErrors(e => ({...e, cityType: null})) }}
-                    className={`flex-1 py-2 px-3 rounded-lg border text-sm font-semibold transition-colors ${data.cityType === 'metro' ? 'border-indigo-600 bg-indigo-600 text-white' : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'}`}
+                    className={`flex-1 py-2 px-3 rounded-lg border text-sm font-semibold transition-colors ${data.cityType === 'metro' ? 'border-indigo-600 bg-indigo-600 text-white' : 'border-slate-600 bg-slate-900 text-slate-300 hover:bg-slate-800'}`}
                   >
                     Metro (50%)
                   </button>
                   <button
                     onClick={() => { update({ cityType: 'nonMetro' }); setErrors(e => ({...e, cityType: null})) }}
-                    className={`flex-1 py-2 px-3 rounded-lg border text-sm font-semibold transition-colors ${data.cityType === 'nonMetro' ? 'border-indigo-600 bg-indigo-600 text-white' : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'}`}
+                    className={`flex-1 py-2 px-3 rounded-lg border text-sm font-semibold transition-colors ${data.cityType === 'nonMetro' ? 'border-indigo-600 bg-indigo-600 text-white' : 'border-slate-600 bg-slate-900 text-slate-300 hover:bg-slate-800'}`}
                   >
                     Non-Metro (40%)
                   </button>
@@ -91,7 +91,7 @@ export default function S05_Exemptions(props) {
               </div>
 
               {(Number(data.monthlyRent) * 12) > 100000 && (
-                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                <div className="bg-amber-900/30 border border-amber-200 rounded-lg p-3">
                   <p className="text-xs text-amber-800">Note: Since annual rent exceeds ₹1,00,000, you will need your landlord's PAN to claim HRA exemption.</p>
                 </div>
               )}
@@ -99,20 +99,20 @@ export default function S05_Exemptions(props) {
           )}
         </div>
 
-        <div className="pt-6 border-t border-gray-100">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+        <div className="pt-6 border-t border-slate-800">
+          <label className="block text-sm font-medium text-slate-300 mb-2">
             Does your salary include HRA (House Rent Allowance)? <span className="text-red-500">*</span>
           </label>
           <div className="flex gap-3 mb-3">
             <button
               onClick={() => { update({ hasHRA: true }); setErrors(e => ({...e, hasHRA: null})) }}
-              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasHRA === true ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasHRA === true ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
             >
               Yes
             </button>
             <button
               onClick={() => { update({ hasHRA: false, hraMonthly: '' }); setErrors(e => ({...e, hasHRA: null, hraMonthly: null})) }}
-              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasHRA === false ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasHRA === false ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
             >
               No
             </button>

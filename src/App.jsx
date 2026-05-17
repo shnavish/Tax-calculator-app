@@ -108,9 +108,9 @@ export default function App() {
 
   // Fallback
   return (
-    <div className="min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center p-4">
-      <div className="text-gray-500">Loading results...</div>
-      <button onClick={goBack} className="mt-4 text-indigo-600 underline">Go Back</button>
+    <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4">
+      <div className="text-slate-500">Loading results...</div>
+      <button onClick={goBack} className="mt-4 text-indigo-400 underline">Go Back</button>
     </div>
   )
 }

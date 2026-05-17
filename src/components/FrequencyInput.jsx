@@ -25,21 +25,21 @@ export default function FrequencyInput({ id, label, value, onChange, placeholder
   return (
     <div className="space-y-1.5">
       <div className="flex items-center justify-between gap-2 flex-wrap">
-        <label htmlFor={id} className="block text-sm font-medium text-gray-700">
+        <label htmlFor={id} className="block text-sm font-medium text-slate-300">
           {label} {required && <span className="text-red-500">*</span>}
         </label>
-        <div className="flex rounded-full border border-gray-200 overflow-hidden bg-gray-50 p-0.5 gap-0.5 shrink-0">
+        <div className="flex rounded-full border border-slate-700 overflow-hidden bg-slate-800 p-0.5 gap-0.5 shrink-0">
           <button
             type="button"
             onClick={() => setFreq('monthly')}
-            className={`px-3 py-1 text-xs font-semibold transition-all rounded-full ${freq === 'monthly' ? 'bg-indigo-600 text-white shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+            className={`px-3 py-1 text-xs font-semibold transition-all rounded-full ${freq === 'monthly' ? 'bg-indigo-600 text-white shadow-md shadow-black/20' : 'text-slate-500 hover:text-gray-700'}`}
           >
             Monthly
           </button>
           <button
             type="button"
             onClick={() => setFreq('annual')}
-            className={`px-3 py-1 text-xs font-semibold transition-all rounded-full ${freq === 'annual' ? 'bg-indigo-600 text-white shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+            className={`px-3 py-1 text-xs font-semibold transition-all rounded-full ${freq === 'annual' ? 'bg-indigo-600 text-white shadow-md shadow-black/20' : 'text-slate-500 hover:text-gray-700'}`}
           >
             Per year
           </button>
@@ -49,7 +49,7 @@ export default function FrequencyInput({ id, label, value, onChange, placeholder
       <div className="relative rounded-xl">
         {prefix && (
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <span className="text-gray-400 text-sm font-medium">{prefix}</span>
+            <span className="text-slate-500 text-sm font-medium">{prefix}</span>
           </div>
         )}
         <input
@@ -61,8 +61,8 @@ export default function FrequencyInput({ id, label, value, onChange, placeholder
           onChange={handleChange}
           placeholder={placeholder}
           aria-describedby={hint ? `${id}-hint` : undefined}
-          className={`block w-full rounded-xl border py-2.5 text-sm text-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:outline-none placeholder:text-gray-400 transition-colors ${
-            isValid ? 'border-green-300 bg-green-50/30' : 'border-gray-200'
+          className={`block w-full rounded-xl border py-2.5 text-sm text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:outline-none placeholder:text-gray-400 transition-colors ${
+            isValid ? 'border-green-300 bg-green-50/30' : 'border-slate-700'
           } ${prefix ? 'pl-8 pr-9' : 'px-3 pr-9'}`}
         />
         {isValid && (
@@ -75,18 +75,18 @@ export default function FrequencyInput({ id, label, value, onChange, placeholder
       </div>
       
       {freq === 'monthly' && annualValue > 0 && (
-        <div className="text-xs text-indigo-600 font-medium reveal">
+        <div className="text-xs text-indigo-400 font-medium reveal">
           = ₹{annualValue.toLocaleString('en-IN')} per year (auto-calculated)
         </div>
       )}
 
       {note && (
-        <div className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-md px-2 py-1">
+        <div className="text-xs text-amber-700 bg-amber-900/30 border border-amber-200 rounded-md px-2 py-1">
           {note}
         </div>
       )}
       {hint && (
-        <p id={`${id}-hint`} className="text-xs text-gray-400">
+        <p id={`${id}-hint`} className="text-xs text-slate-500">
           {hint}
         </p>
       )}

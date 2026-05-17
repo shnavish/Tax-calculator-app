@@ -77,10 +77,10 @@ export default function TaxPreviewPanel({ data }) {
   function SectionLabel({ letter, text }) {
     return (
       <div className="flex items-center gap-2 mb-2">
-        <div className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-bold flex items-center justify-center shrink-0">
+        <div className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-400 text-[10px] font-bold flex items-center justify-center shrink-0">
           {letter}
         </div>
-        <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{text}</div>
+        <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{text}</div>
       </div>
     )
   }
@@ -88,43 +88,43 @@ export default function TaxPreviewPanel({ data }) {
   function LineRow({ label, amount, green, muted }) {
     return (
       <div className="flex justify-between items-center py-0.5">
-        <div className={`text-xs ${muted ? 'text-gray-400' : 'text-gray-600'}`}>{label}</div>
-        <div className={`text-xs font-semibold ${green ? 'text-green-600' : muted ? 'text-gray-400' : 'text-gray-700'}`}>{amount}</div>
+        <div className={`text-xs ${muted ? 'text-slate-500' : 'text-slate-500'}`}>{label}</div>
+        <div className={`text-xs font-semibold ${green ? 'text-green-400' : muted ? 'text-slate-500' : 'text-slate-300'}`}>{amount}</div>
       </div>
     )
   }
 
   function ResultBox({ label, amount, indigo }) {
     return (
-      <div className={`flex justify-between items-center rounded-lg px-3 py-2 mt-1.5 ${indigo ? 'bg-indigo-50 border border-indigo-100' : 'bg-gray-100 border border-gray-200'}`}>
-        <div className={indigo ? 'text-indigo-700' : 'text-gray-500'}>= {label}</div>
-        <div className={`text-sm font-bold ${indigo ? 'text-indigo-800' : 'text-gray-800'}`}>{amount}</div>
+      <div className={`flex justify-between items-center rounded-lg px-3 py-2 mt-1.5 ${indigo ? 'bg-indigo-900/30 border border-indigo-800' : 'bg-slate-800 border border-slate-700'}`}>
+        <div className={indigo ? 'text-indigo-400' : 'text-slate-500'}>= {label}</div>
+        <div className={`text-sm font-bold ${indigo ? 'text-indigo-800' : 'text-slate-200'}`}>{amount}</div>
       </div>
     )
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-md shadow-gray-100 overflow-hidden">
-      <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-100">
-        <div className="text-sm font-bold text-gray-900">Your Live Tax Estimate</div>
-        <div className="text-xs font-semibold text-indigo-600 bg-indigo-50 border border-indigo-100 rounded-full px-2.5 py-0.5">FY 2025-26</div>
+    <div className="bg-slate-900 rounded-2xl border border-slate-800 shadow-md shadow-gray-100 overflow-hidden">
+      <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-800">
+        <div className="text-sm font-bold text-white">Your Live Tax Estimate</div>
+        <div className="text-xs font-semibold text-indigo-400 bg-indigo-900/30 border border-indigo-800 rounded-full px-2.5 py-0.5">FY 2025-26</div>
       </div>
 
-      <div className="px-4 py-2.5 border-b border-gray-100 flex items-center justify-between gap-2">
-        <div className="flex rounded-full border border-gray-200 bg-gray-50 p-0.5 gap-0.5">
+      <div className="px-4 py-2.5 border-b border-slate-800 flex items-center justify-between gap-2">
+        <div className="flex rounded-full border border-slate-700 bg-slate-800 p-0.5 gap-0.5">
           <button
             onClick={() => setUserPickedRegime('new')}
-            className={`py-1.5 px-3 text-xs font-semibold transition-all rounded-full flex items-center ${regime === 'new' ? 'bg-white text-indigo-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+            className={`py-1.5 px-3 text-xs font-semibold transition-all rounded-full flex items-center ${regime === 'new' ? 'bg-slate-900 text-indigo-400 shadow-md shadow-black/20' : 'text-slate-500 hover:text-gray-700'}`}
           >
             New Regime
-            {betterRegime === 'new' && <span className="ml-1 text-green-600 text-[10px] font-bold">Best</span>}
+            {betterRegime === 'new' && <span className="ml-1 text-green-400 text-[10px] font-bold">Best</span>}
           </button>
           <button
             onClick={() => setUserPickedRegime('old')}
-            className={`py-1.5 px-3 text-xs font-semibold transition-all rounded-full flex items-center ${regime === 'old' ? 'bg-white text-indigo-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+            className={`py-1.5 px-3 text-xs font-semibold transition-all rounded-full flex items-center ${regime === 'old' ? 'bg-slate-900 text-indigo-400 shadow-md shadow-black/20' : 'text-slate-500 hover:text-gray-700'}`}
           >
             Old Regime
-            {betterRegime === 'old' && <span className="ml-1 text-green-600 text-[10px] font-bold">Best</span>}
+            {betterRegime === 'old' && <span className="ml-1 text-green-400 text-[10px] font-bold">Best</span>}
           </button>
         </div>
         <button className="text-[11px] text-indigo-500 hover:text-indigo-700 underline decoration-dotted underline-offset-2 shrink-0">
@@ -134,12 +134,12 @@ export default function TaxPreviewPanel({ data }) {
 
       {!hasIncome ? (
         <div className="px-4 py-8 text-center flex flex-col items-center">
-          <div className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-            <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center mb-3">
+            <svg className="w-5 h-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
           </div>
-          <p className="text-xs text-gray-400 leading-relaxed">Enter your salary to<br/>see a live tax estimate</p>
+          <p className="text-xs text-slate-500 leading-relaxed">Enter your salary to<br/>see a live tax estimate</p>
         </div>
       ) : (
         <div className="space-y-1 pb-4">
@@ -152,7 +152,7 @@ export default function TaxPreviewPanel({ data }) {
           )}
 
           <div className="px-4 pt-3 pb-1">
-            <div className="text-xs font-bold text-gray-800 uppercase tracking-wider">BREAKDOWN</div>
+            <div className="text-xs font-bold text-slate-200 uppercase tracking-wider">BREAKDOWN</div>
           </div>
 
           <div className="px-4 mb-3">
@@ -179,11 +179,11 @@ export default function TaxPreviewPanel({ data }) {
             {regime === 'old' && activeData.deduction80TTA_TTB > 0 && <LineRow label="Savings Interest Deduction" amount={`− ${fmt(activeData.deduction80TTA_TTB)}`} green />}
             
             {regime === 'new' && activeData.employerNPSDeduction === 0 && (
-              <div className="flex items-start gap-1.5 mt-1.5 p-2 bg-gray-50 rounded-lg">
-                <svg className="w-3 h-3 text-gray-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="flex items-start gap-1.5 mt-1.5 p-2 bg-slate-800 rounded-lg">
+                <svg className="w-3 h-3 text-slate-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <div className="text-[11px] text-gray-400 leading-relaxed">New regime: only standard deduction applies.</div>
+                <div className="text-[11px] text-slate-500 leading-relaxed">New regime: only standard deduction applies.</div>
               </div>
             )}
             <ResultBox label="Taxable Income" amount={fmt(activeData.taxableIncome)} indigo />
@@ -192,16 +192,16 @@ export default function TaxPreviewPanel({ data }) {
           <div className="px-4">
             <SectionLabel letter="C" text="Tax on Slabs" />
             
-            <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-100 mb-2">
-              <div className="grid grid-cols-4 gap-1 px-2.5 py-2 border-b border-gray-200 bg-gray-100/50">
-                <div className="text-[10px] font-semibold text-gray-500 uppercase">Income Slab</div>
-                <div className="text-[10px] font-semibold text-gray-500 uppercase text-center">Rate</div>
-                <div className="text-[10px] font-semibold text-gray-500 uppercase text-right">Your Income</div>
-                <div className="text-[10px] font-semibold text-gray-500 uppercase text-right">Tax</div>
+            <div className="bg-slate-800 rounded-lg overflow-hidden border border-slate-800 mb-2">
+              <div className="grid grid-cols-4 gap-1 px-2.5 py-2 border-b border-slate-700 bg-gray-100/50">
+                <div className="text-[10px] font-semibold text-slate-500 uppercase">Income Slab</div>
+                <div className="text-[10px] font-semibold text-slate-500 uppercase text-center">Rate</div>
+                <div className="text-[10px] font-semibold text-slate-500 uppercase text-right">Your Income</div>
+                <div className="text-[10px] font-semibold text-slate-500 uppercase text-right">Tax</div>
               </div>
               <div className="divide-y divide-gray-100">
                 {slabRows.map((row, i) => (
-                  <div key={i} className={`grid grid-cols-4 gap-1 px-2.5 py-1.5 text-[11px] ${row.active ? 'bg-indigo-50/60 text-indigo-700 font-medium' : 'text-gray-400'}`}>
+                  <div key={i} className={`grid grid-cols-4 gap-1 px-2.5 py-1.5 text-[11px] ${row.active ? 'bg-indigo-50/60 text-indigo-400 font-medium' : 'text-slate-500'}`}>
                     <div className="truncate">{row.label}</div>
                     <div className="text-center">{Math.round(row.rate * 100)}%</div>
                     <div className="text-right">{fmtN(row.incomeInBand)}</div>
@@ -224,22 +224,22 @@ export default function TaxPreviewPanel({ data }) {
           </div>
 
           {computeSuccess && savings > 0 && (
-            <div className="mx-4 mt-3 flex items-center gap-2.5 bg-green-50 border border-green-100 rounded-xl px-3 py-2.5">
-              <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <div className="mx-4 mt-3 flex items-center gap-2.5 bg-green-900/30 border border-green-800 rounded-xl px-3 py-2.5">
+              <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <div>
-                <div className="text-xs font-bold text-green-800">{regime === 'new' ? 'New' : 'Old'} Regime saves you {fmt(savings)}</div>
-                <div className="text-xs text-green-600 mt-0.5">vs {regime === 'new' ? 'Old' : 'New'} Regime ({fmt(regime === 'new' ? oldTotal : newTotal)})</div>
+                <div className="text-xs font-bold text-green-400">{regime === 'new' ? 'New' : 'Old'} Regime saves you {fmt(savings)}</div>
+                <div className="text-xs text-green-400 mt-0.5">vs {regime === 'new' ? 'Old' : 'New'} Regime ({fmt(regime === 'new' ? oldTotal : newTotal)})</div>
               </div>
             </div>
           )}
 
-          <div className="flex items-center justify-center gap-2 px-4 pt-3 mt-4 border-t border-gray-100">
+          <div className="flex items-center justify-center gap-2 px-4 pt-3 mt-4 border-t border-slate-800">
             <svg className="w-3.5 h-3.5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            <div className="text-[11px] text-gray-400">100% Private & Secure · Data never leaves your browser</div>
+            <div className="text-[11px] text-slate-500">100% Private & Secure · Data never leaves your browser</div>
           </div>
         </div>
       )}

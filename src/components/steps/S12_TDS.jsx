@@ -27,28 +27,28 @@ export default function S12_TDS(props) {
     <StepWrapper {...props} stepName="Taxes Paid">
       <div className="mb-4 flex items-center gap-2">
         <div className="w-6 h-6 rounded-lg bg-indigo-100 flex items-center justify-center text-sm">✂️</div>
-        <div className="text-xs font-medium text-indigo-600 uppercase tracking-wide">Taxes Paid</div>
+        <div className="text-xs font-medium text-indigo-400 uppercase tracking-wide">Taxes Paid</div>
       </div>
       
-      <h2 className="text-xl font-bold text-gray-900 leading-tight mb-6">
+      <h2 className="text-xl font-bold text-white leading-tight mb-6">
         Has your employer deducted any TDS?
       </h2>
 
       <div className="space-y-6 mb-8">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-slate-300 mb-2">
             Tax Deducted at Source (TDS) on Salary <span className="text-red-500">*</span>
           </label>
           <div className="flex gap-3 mb-3">
             <button
               onClick={() => { update({ hasTDS: true }); setErrors({}) }}
-              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasTDS === true ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasTDS === true ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
             >
               Yes
             </button>
             <button
               onClick={() => { update({ hasTDS: false, tdsDeducted: '' }); setErrors({}) }}
-              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasTDS === false ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasTDS === false ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
             >
               No
             </button>
@@ -57,7 +57,7 @@ export default function S12_TDS(props) {
         </div>
 
         {data.hasTDS && (
-          <div className="bg-indigo-50/50 border border-indigo-100 rounded-xl p-4 reveal space-y-4">
+          <div className="bg-indigo-50/50 border border-indigo-800 rounded-xl p-4 reveal space-y-4">
             <FrequencyInput
               id="tds_sal"
               label="TDS deducted by employer"
@@ -69,9 +69,9 @@ export default function S12_TDS(props) {
         )}
 
         {data.hasOtherIncome && (
-          <div className="pt-6 border-t border-gray-100">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">TDS on Other Income</h3>
-            <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <div className="pt-6 border-t border-slate-800">
+            <h3 className="text-sm font-bold text-white mb-4">TDS on Other Income</h3>
+            <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
               <NumberInput
                 id="tds_bank"
                 label="TDS deducted by banks (e.g. on FDs)"

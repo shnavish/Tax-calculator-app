@@ -44,10 +44,10 @@ export default function S04_SalaryDetails(props) {
     <StepWrapper {...props} stepName="Salary Details">
       <div className="mb-4 flex items-center gap-2">
         <div className="w-6 h-6 rounded-lg bg-indigo-100 flex items-center justify-center text-sm">💰</div>
-        <div className="text-xs font-medium text-indigo-600 uppercase tracking-wide">Your Salary</div>
+        <div className="text-xs font-medium text-indigo-400 uppercase tracking-wide">Your Salary</div>
       </div>
       
-      <h2 className="text-xl font-bold text-gray-900 leading-tight mb-6">
+      <h2 className="text-xl font-bold text-white leading-tight mb-6">
         What does your salary look like?
       </h2>
 
@@ -77,45 +77,45 @@ export default function S04_SalaryDetails(props) {
         {errors.basic && <p className="text-sm text-red-600">Basic pay is required.</p>}
 
         {showBasicWarning && (
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 reveal">
+          <div className="bg-amber-900/30 border border-amber-200 rounded-lg p-3 reveal">
             <p className="text-sm text-amber-800 font-medium mb-1">Wait, is your basic pay higher than your take-home?</p>
             <p className="text-xs text-amber-700">Basic pay is usually 40-50% of your total salary. Please double-check your salary slip.</p>
           </div>
         )}
 
         {showSurchargeWarning && (
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 reveal">
+          <div className="bg-amber-900/30 border border-amber-200 rounded-lg p-3 reveal">
             <p className="text-sm text-amber-800 font-medium mb-1">High Income Surcharge Warning</p>
             <p className="text-xs text-amber-700">Incomes above ₹50 lakh attract a surcharge. This calculator does not handle surcharge. Please consult a CA.</p>
           </div>
         )}
 
         {annualTakeHome > 0 && !data.hasBonus && (
-          <div className="reveal px-4 py-2.5 bg-indigo-50 border border-indigo-100 rounded-xl flex items-center justify-between">
+          <div className="reveal px-4 py-2.5 bg-indigo-900/30 border border-indigo-800 rounded-xl flex items-center justify-between">
             <div className="text-sm font-medium text-indigo-900">Total Annual Take-home</div>
-            <div className="text-lg font-bold text-indigo-700">₹{(annualTakeHome).toLocaleString('en-IN')}</div>
+            <div className="text-lg font-bold text-indigo-400">₹{(annualTakeHome).toLocaleString('en-IN')}</div>
           </div>
         )}
 
-        <div className="pt-6 border-t border-gray-100">
+        <div className="pt-6 border-t border-slate-800">
           <div className="mb-3">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-slate-300 mb-2">
               Do you get any extra money apart from your fixed monthly salary? <span className="text-red-500">*</span>
             </label>
-            <p className="text-xs text-gray-500 mb-3">Like a yearly bonus, performance incentive, or variable pay.</p>
+            <p className="text-xs text-slate-500 mb-3">Like a yearly bonus, performance incentive, or variable pay.</p>
             
             <div className="flex gap-3">
               <button
                 type="button"
                 onClick={() => { update({ hasBonus: true }); setErrors(e => ({...e, hasBonus: null})) }}
-                className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasBonus === true ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+                className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasBonus === true ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
               >
                 Yes
               </button>
               <button
                 type="button"
                 onClick={() => { update({ hasBonus: false, bonus: '' }); setErrors(e => ({...e, hasBonus: null, bonus: null})) }}
-                className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasBonus === false ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+                className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasBonus === false ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
               >
                 No
               </button>
@@ -124,7 +124,7 @@ export default function S04_SalaryDetails(props) {
           </div>
 
           {data.hasBonus === true && (
-            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 reveal space-y-4">
+            <div className="bg-blue-900/30 border border-blue-800 rounded-xl p-4 reveal space-y-4">
               <FrequencyInput
                 id="bonus"
                 label="How much bonus do you receive?"
@@ -134,9 +134,9 @@ export default function S04_SalaryDetails(props) {
               />
               {errors.bonus && <p className="text-sm text-red-600 mt-1">Bonus amount is required.</p>}
 
-              <div className="bg-white rounded-lg p-3 shadow-sm border border-blue-100">
-                <p className="text-xs font-semibold text-gray-700 mb-1">Not sure of the exact amount?</p>
-                <p className="text-xs text-gray-500">Just enter an estimate for now. You can always change it later.</p>
+              <div className="bg-slate-900 rounded-lg p-3 shadow-md shadow-black/20 border border-blue-800">
+                <p className="text-xs font-semibold text-slate-300 mb-1">Not sure of the exact amount?</p>
+                <p className="text-xs text-slate-500">Just enter an estimate for now. You can always change it later.</p>
               </div>
               
               <p className="text-[11px] text-blue-700">Don't include: your fixed monthly salary, stock options (RSUs), or reimbursements.</p>
@@ -144,13 +144,13 @@ export default function S04_SalaryDetails(props) {
           )}
 
           {data.hasBonus === false && (
-            <div className="reveal px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs text-gray-600 text-center">
+            <div className="reveal px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs text-slate-500 text-center">
               Got it — we'll use only your fixed monthly salary.
             </div>
           )}
 
           {data.hasBonus && annualTakeHome > 0 && bonus > 0 && (
-            <div className="mt-4 reveal px-4 py-2.5 bg-green-50 border border-green-100 rounded-xl flex items-center justify-between">
+            <div className="mt-4 reveal px-4 py-2.5 bg-green-900/30 border border-green-800 rounded-xl flex items-center justify-between">
               <div className="text-sm font-medium text-green-900">Total Take-home + Bonus</div>
               <div className="text-lg font-bold text-green-700">₹{(annualTakeHome + bonus).toLocaleString('en-IN')}</div>
             </div>

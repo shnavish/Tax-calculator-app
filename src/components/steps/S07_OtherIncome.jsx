@@ -26,28 +26,28 @@ export default function S07_OtherIncome(props) {
     <StepWrapper {...props} stepName="Other Income">
       <div className="mb-4 flex items-center gap-2">
         <div className="w-6 h-6 rounded-lg bg-indigo-100 flex items-center justify-center text-sm">📈</div>
-        <div className="text-xs font-medium text-indigo-600 uppercase tracking-wide">Income</div>
+        <div className="text-xs font-medium text-indigo-400 uppercase tracking-wide">Income</div>
       </div>
       
-      <h2 className="text-xl font-bold text-gray-900 leading-tight mb-6">
+      <h2 className="text-xl font-bold text-white leading-tight mb-6">
         Did you earn any other income?
       </h2>
 
       <div className="space-y-6 mb-8">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-slate-300 mb-2">
             Do you have interest income from FDs or Savings Accounts? <span className="text-red-500">*</span>
           </label>
           <div className="flex gap-3 mb-3">
             <button
               onClick={() => { update({ hasOtherIncome: true }); setErrors({}) }}
-              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasOtherIncome === true ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasOtherIncome === true ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
             >
               Yes
             </button>
             <button
               onClick={() => { update({ hasOtherIncome: false, fdInterest: '', savingsInterest: '' }); setErrors({}) }}
-              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasOtherIncome === false ? 'border-indigo-600 bg-indigo-50 text-indigo-700' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'}`}
+              className={`flex-1 py-2.5 px-4 rounded-xl border-2 font-semibold transition-colors ${data.hasOtherIncome === false ? 'border-indigo-600 bg-indigo-900/30 text-indigo-400' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-gray-300 hover:bg-slate-800'}`}
             >
               No
             </button>
@@ -56,7 +56,7 @@ export default function S07_OtherIncome(props) {
         </div>
 
         {data.hasOtherIncome && (
-          <div className="bg-indigo-50/50 border border-indigo-100 rounded-xl p-4 reveal space-y-4">
+          <div className="bg-indigo-50/50 border border-indigo-800 rounded-xl p-4 reveal space-y-4">
             <NumberInput
               id="fd"
               label="Fixed Deposit (FD) Interest"

@@ -36,10 +36,10 @@ export default function S03_AgeGroup(props) {
     <StepWrapper {...props} stepName="Your Age Group">
       <div className="mb-4 flex items-center gap-2">
         <div className="w-6 h-6 rounded-lg bg-indigo-100 flex items-center justify-center text-sm">🎂</div>
-        <div className="text-xs font-medium text-indigo-600 uppercase tracking-wide">About You</div>
+        <div className="text-xs font-medium text-indigo-400 uppercase tracking-wide">About You</div>
       </div>
       
-      <h2 className="text-xl font-bold text-gray-900 leading-tight mb-6">
+      <h2 className="text-xl font-bold text-white leading-tight mb-6">
         Which age group do you fall in?
       </h2>
       
@@ -52,8 +52,8 @@ export default function S03_AgeGroup(props) {
               onClick={() => handleSelect(opt.value)}
               className={`p-4 rounded-xl border-2 cursor-pointer transition-all ${
                 selected 
-                  ? 'border-indigo-600 bg-indigo-50' 
-                  : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
+                  ? 'border-indigo-600 bg-indigo-900/30' 
+                  : 'border-slate-700 bg-slate-900 hover:border-gray-300 hover:bg-slate-800'
               }`}
               role="radio"
               aria-checked={selected}
@@ -61,25 +61,25 @@ export default function S03_AgeGroup(props) {
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className={`text-sm font-bold ${selected ? 'text-indigo-900' : 'text-gray-900'}`}>
+                    <span className={`text-sm font-bold ${selected ? 'text-indigo-900' : 'text-white'}`}>
                       {opt.label}
                     </span>
                     {opt.tag && (
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                        selected ? 'bg-indigo-200 text-indigo-800' : 'bg-gray-100 text-gray-600'
+                        selected ? 'bg-indigo-200 text-indigo-800' : 'bg-slate-800 text-slate-500'
                       }`}>
                         {opt.tag}
                       </span>
                     )}
                   </div>
-                  <div className={`text-xs ${selected ? 'text-indigo-700' : 'text-gray-500'}`}>
+                  <div className={`text-xs ${selected ? 'text-indigo-400' : 'text-slate-500'}`}>
                     {opt.description}
                   </div>
                 </div>
                 <div className={`w-5 h-5 mt-0.5 shrink-0 rounded-full border-2 flex items-center justify-center ${
-                  selected ? 'border-indigo-600 bg-indigo-600' : 'border-gray-300 bg-white'
+                  selected ? 'border-indigo-600 bg-indigo-600' : 'border-slate-600 bg-slate-900'
                 }`}>
-                  {selected && <div className="w-2 h-2 rounded-full bg-white"></div>}
+                  {selected && <div className="w-2 h-2 rounded-full bg-slate-900"></div>}
                 </div>
               </div>
             </div>
