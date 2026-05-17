@@ -2,13 +2,16 @@ export default function S01_Landing({ goNext }) {
   return (
     <div className="min-h-screen bg-slate-950 flex flex-col">
       <header className="w-full max-w-6xl mx-auto px-6 sm:px-10 py-5 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20">
+            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
           </div>
-          <span className="text-sm font-bold text-white tracking-tight">Shivansh's tax calculator app</span>
+          <div className="flex flex-col">
+            <span className="text-lg font-black text-white tracking-tight leading-none mb-0.5">Simplifytax</span>
+            <span className="text-[10px] font-medium text-indigo-300/80 leading-none tracking-wide">SHIVANSH'S TAX CALCULATOR APP</span>
+          </div>
         </div>
         <div className="text-xs font-medium text-slate-500 bg-slate-800 rounded-full px-3 py-1">FY 2025-26</div>
       </header>
